@@ -1,0 +1,28 @@
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -71,7 +71,7 @@
+ find_package(Libintl REQUIRED)
+ find_package(Libiconv REQUIRED)
+ find_package(Pthread REQUIRED)
+-find_package(Libexecinfo)
++#find_package(Libexecinfo)
+ find_package(GettextPo)
+ find_package(XKBCommon 0.5.0 REQUIRED COMPONENTS XKBCommon)
+ 
+@@ -79,11 +79,11 @@
+   fcitx_disable_gettext()
+ endif()
+ 
+-if(LIBEXECINFO_LIB_FOUND)
+-  set(ENABLE_BACKTRACE 1)
+-else()
+-  set(ENABLE_BACKTRACE 0)
+-endif()
++#if(LIBEXECINFO_LIB_FOUND)
++#  set(ENABLE_BACKTRACE 1)
++#else()
++set(ENABLE_BACKTRACE 0)
++#endif()
+ 
+ if(${CMAKE_SYSTEM_NAME} MATCHES "BSD")
+   find_package(Libkvm REQUIRED)
